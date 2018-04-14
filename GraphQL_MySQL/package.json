@@ -16,6 +16,7 @@
     "express-graphql": "^0.6.12",
     "graphql": "^0.13.2",
     "graphql-date": "^1.0.3",
+    "graphql-iso-date": "^3.5.0",
     "graphql-resolve-batch": "^1.0.2",
     "mysql": "^2.15.0",
     "promise-mysql": "^3.2.1",

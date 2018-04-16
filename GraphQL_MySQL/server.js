@@ -16,5 +16,5 @@ app.use('/graphql', graphQL({
 }));
 
 app.listen(3000, function(){
-    console.log("server started");
+    console.log('Connected to the server via the port 3000!!!');
 });

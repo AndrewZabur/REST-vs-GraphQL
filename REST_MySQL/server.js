@@ -10,12 +10,12 @@ app.use(bodyParser.urlencoded({
   
 /* Starting our server with port 3000 */
 app.listen(3000, function () {
-    console.log('Connected to the server with port 3000!!!');
+    console.log('Connected to the server via the port 3000!!!');
 });
 
 /* Default route with / url */
 app.get('/', function (request, response) {
-    return response.send({ message: 'Connected to the server with port 3000!!!' });
+    return response.send({ message: 'Connected to the server via the port 3000!!!' });
 });
 
 /* Get buses app */

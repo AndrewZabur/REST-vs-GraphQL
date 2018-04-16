@@ -13,6 +13,7 @@ const {
 // Bus type specification!
 const busType = new GraphQLObjectType({
     name: 'bus',
+    description: 'Describing bus type!',
     fields: () => ({
         busId: {
             type: GraphQLInt
@@ -30,7 +31,7 @@ const busType = new GraphQLObjectType({
             type: GraphQLDate
         },
         garageId: {
-            type: GraphQLInt
+            type: GraphQLInt,
         }
     })
 });
@@ -38,6 +39,7 @@ const busType = new GraphQLObjectType({
 //Garage type specification!
 const garageType = new GraphQLObjectType({
     name: 'garage',
+    description: 'Describing garage type!',
     fields: () => ({
         garageId: {
             type: GraphQLInt
@@ -66,6 +68,7 @@ const garageType = new GraphQLObjectType({
 //Root query, where all the get queries are described!
 const rootQueryType = new GraphQLObjectType({
     name: 'rootQuery',
+    description: 'Fetching information about buses and garages!',
     fields: {
         bus: {
             type: busType,
@@ -123,6 +126,7 @@ const rootQueryType = new GraphQLObjectType({
 //Mutations
 const rootMutation = new GraphQLObjectType({
     name: "rootMutation",
+    description: 'Mutating information about buses and garages!',
     fields:{
         createNewBus: {
             type: busType,

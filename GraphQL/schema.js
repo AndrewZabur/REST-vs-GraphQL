@@ -1,4 +1,5 @@
 const axios = require('axios');
+ 
 const {
     GraphQLObjectType,
     GraphQLString,
@@ -53,7 +54,6 @@ const rootQuery = new GraphQLObjectType({
                             .then((response) =>{
                                 return response.data;
                             });
-                       
             }
         },
         customers:{

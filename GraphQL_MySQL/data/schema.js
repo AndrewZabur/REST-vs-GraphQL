@@ -30,8 +30,16 @@ const busType = new GraphQLObjectType({
         dataConstruction: {
             type: GraphQLDate
         },
-        garageId: {
-            type: GraphQLInt,
+        garage: {
+            type: garageType,
+            description: 'Select garage where the bus is situated.',
+            resolve(root, args){
+                return new Promises(function(resolve, reject) {
+                    mc.query('SELECT garage.* FROM (garage INNER JOIN bus ON garage.garageId = bus.garageId) WHERE bus.busId = ?', [root.busId] ,function(err, result){
+                        return (err ? reject(err) : resolve(result[0]));  
+                    });
+                });
+            }
         }
     })
 });
